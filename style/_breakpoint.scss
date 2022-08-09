@@ -1,0 +1,12 @@
+$breakpoints : (
+  mobile : 600px, 
+  tablet : 1024px
+);
+
+@mixin media($keys...){
+  @each $key in $keys { 
+    @media (max-width: map-get($breakpoints, $key)){
+      @content
+    } 
+  }
+}
